@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Eva Camila ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            overflow-y: auto; /* Permitir desplazamiento vertical */
+        }
+        nav {
+            background: #ff758c;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .love-links a {
+            display: block;
+            background: #ff758c;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 300px;
+            border-radius: 25px;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+        .love-links a:hover {
+            background: #ff5e78;
+        }
+        .heart {
+            font-size: 5em;
+            animation: heartbeat 1.5s infinite;
+        }
+        .heart-group {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .heart-group .heart {
+            margin: 10px;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        .quiz-container button {
+            background: #ff758c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        .quiz-container button:hover {
+            background: #ff5e78;
+        }
+        .counter-container {
+            margin-top: 40px;
+        }
+        .counter-container p {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .counter-container button {
+            background: #ff758c;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.5em;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .counter-container button:hover {
+            background: #ff5e78;
+        }
+        /* Slider */
+        .slider-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        input[type="range"] {
+            width: 80%;
+            max-width: 600px;
+            height: 15px;
+            background: #ff758c;
+            border-radius: 10px;
+            outline: none;
+        }
+        input[type="range"]:hover {
+            background: #ff5e78;
+        }
+        .back-button {
+            background: #ff758c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background: #ff5e78;
+        }
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fad0c4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #ff758c;
+            border-radius: 20px;
+            border: 3px solid #fad0c4;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#love">Amor</a>
+        <a href="#quiz">Juego</a>
+        <a href="#counter">Contador de Amor</a>
+    </nav>
+    <h1>Para Eva Camila ❤️</h1>
+    <title>Mejor conocida como el amor de mi vida❤️</title>
+    <p>Camila, quiero decirte con todo mi corazón que...</p>
+    <p><strong>¡Te amo con todo mi ser! 💖</strong></p>
+    <div class="heart-group">
+        <div class="heart">❤️</div>
+        <div class="heart">❤️</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤️</div>
+    </div>
+    <div class="love-links">
+       <img src="imagen.jpg" alt="Descripción de la imagen "width="200">
+        <a href="https://vm.tiktok.com/ZMktYgMr7/" target="_blank">Video de Amor 1 🎥</a>
+        <a href="https://vm.tiktok.com/ZMktYTDdN/" target="_blank">Video de Amor 2 🎥</a>
+        <a href="https://vm.tiktok.com/ZMktYG91X/" target="_blank">Video de Amor 3 🎥</a>
+        <a href="https://youtu.be/7flT6J_1P7Y?si=P6_nhhFFh6PB9nJI" target="_blank">Canción de Amor 🎶</a>
+        <a href="https://www.aullidos.com/relatos/amor_imposible.pdf" target="_blank">Cuento de Amor 📖</a>
+        <a >TE AMO MAS QUE AYER, PERO NO MAS QUE MAÑANA ❤</a>
+    </div>
+    
+    <div class="quiz-container" id="quiz">
+        <h2 style="color: red;">Preguntas de Amor 💕</h2>
+        <p>¿Cuánto te amo?</p>
+        <button onclick="alert('Correcto! Te amo con todo mi ser 💖')">Mucho</button>
+        <button onclick="alert('Correcto! Te amo más de lo que imaginas 💖')">Más de lo que imaginas</button>
+        <p>¿Cuántas veces pienso en ti al día?</p>
+        <button onclick="alert('Correcto! Todo el tiempo 😍')">Todo el tiempo</button>
+        <button onclick="alert('Correcto! Cada segundo de mi vida 💘')">Cada segundo</button>
+        <p>¿Qué tan especial eres para mí?</p>
+        <button onclick="alert('Correcto! Eres lo mejor que me ha pasado 💞')">Lo mejor que me ha pasado</button>
+        <button onclick="alert('Correcto! Eres mi todo 💓')">Mi todo</button>
+        <p>¿Por qué te amo tanto?</p>
+        <button onclick="alert('Correcto! Porque eres increíblemente especial 💖')">Porque eres increíblemente especial</button>
+        <button onclick="alert('Correcto! Porque eres mi felicidad ❤️')">Porque eres mi felicidad</button>
+        <!-- Nuevas Preguntas -->
+        <p>¿Qué me hace feliz?</p>
+        <button onclick="alert('Correcto! Tu sonrisa 💖')">Tu sonrisa</button>
+        <button onclick="alert('Correcto! Tu compañía 💖')">Tu compañía</button>
+        <p>¿Cuál es mi sueño?</p>
+        <button onclick="alert('Correcto! Pasar mi vida contigo 💖')">Pasar mi vida contigo</button>
+        <button onclick="alert('Correcto! Hacerte feliz cada día 💖')">Hacerte feliz cada día</button>
+    </div>
+
+    <div class="counter-container" id="counter">
+        <p>Te quiero <span id="counter-span">0</span> veces</p>
+        <button onclick="incrementCounter()">¡Quiero mucho más!</button>
+        <p id="special-question" style="display:none; font-size: 1.5em;">¿Te quieres casar conmigo? 💍</p>
+    </div>
+
+    <div class="slider-container">
+        <p>Ajusta el deslizador para ver tu amor en acción:</p>
+        <input type="range" id="slider" min="0" max="100" value="0" onchange="updateSliderValue()">
+        <p>Valor: <span id="slider-value">0</span>%</p>
+    </div>
+
+    <div>
+        <button class="back-button" onclick="goBack()">Volver</button>
+    </div>
+
+    <script>
+        let counter = 0;
+        function incrementCounter() {
+            counter++;
+            document.getElementById("counter-span").innerText = counter;
+
+            if (counter >= 20) {
+                document.getElementById("special-question").style.display = "block";
+            }
+        }
+
+        function updateSliderValue() {
+            const sliderValue = document.getElementById("slider").value;
+            document.getElementById("slider-value").innerText = sliderValue;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
