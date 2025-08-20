@@ -6,72 +6,217 @@
   <title>LOEYI - Inicio</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Fondo con imagen del local */
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0; padding: 0;
-      background: #fff7f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('local.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      color: #333;
     }
-    h1 {
+
+    /* Overlay con menos transparencia para ver el fondo */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      z-index: -1;
+    }
+
+    /* Encabezado */
+    header h1 {
       margin-top: 30px;
-      color: #ff5722;
+      color: #ff7043;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      font-size: 2.6rem;
     }
+
+    /* Carrusel */
     .carrusel {
       display: flex;
       justify-content: center;
       gap: 30px;
       margin: 40px auto;
-      max-width: 900px;
+      max-width: 1000px;
+      flex-wrap: wrap;
+      padding: 0 10px;
     }
     .carrusel a {
       display: block;
-      border-radius: 12px;
+      border-radius: 20px;
       overflow: hidden;
       width: 280px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
       text-decoration: none;
       color: #333;
+      background: #fff;
+      position: relative;
     }
     .carrusel a:hover {
-      transform: scale(1.05);
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
     }
     .carrusel img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       display: block;
+      transition: transform 0.3s ease;
     }
     .carrusel .titulo {
       padding: 12px 0;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: bold;
-      background: #fff3e0;
+      background: #ffe0b2;
+      color: #f57c00;
+      border-top: 2px solid #ffcc80;
+      transition: background 0.3s ease;
+    }
+    .carrusel a:hover .titulo {
+      background: #ffd180;
     }
 
-    /* Carrito icono global arriba a la derecha */
+    /* Botones con iconos */
+    .carrusel .boton {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 10px 25px;
+      background: #29b6f6;
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .carrusel .boton:hover {
+      background: #0288d1;
+      transform: scale(1.1);
+    }
+
+    /* Carrito icono */
     #carrito-icono {
       position: fixed;
       top: 15px;
       right: 20px;
-      background: #ff5722;
+      background: #66bb6a;
       color: white;
-      padding: 10px 15px;
-      border-radius: 30px;
+      padding: 14px 18px;
+      border-radius: 50px;
       cursor: pointer;
       font-weight: bold;
-      font-size: 18px;
-      box-shadow: 0 0 10px rgba(255,87,34,0.7);
+      font-size: 22px;
+      box-shadow: 0 0 15px rgba(102,187,106,0.7);
       z-index: 1000;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #carrito-icono:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(102,187,106,0.9);
     }
     #carrito-cantidad {
       background: white;
-      color: #ff5722;
+      color: #66bb6a;
       border-radius: 50%;
-      padding: 2px 8px;
+      padding: 4px 10px;
       margin-left: 6px;
       font-weight: bold;
       font-size: 14px;
+    }
+
+    /* Sección Sobre Nosotros */
+    .sobre-nosotros {
+      background: #b2dfdb;
+      margin: 50px auto;
+      padding: 30px 20px;
+      max-width: 900px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+    .sobre-nosotros h2 {
+      color: #00796b;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .sobre-nosotros p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Sección Contacto */
+    .contacto {
+      background: #ffccbc;
+      margin: 50px auto;
+      padding: 30px 20px;
+      max-width: 900px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .contacto h2 {
+      color: #d84315;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .contacto p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+    .contacto a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 25px;
+      background: #ff7043;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .contacto a:hover {
+      background: #e64a19;
+      transform: scale(1.1);
+    }
+
+    /* Iconos en Sobre Nosotros y Contacto */
+    .sobre-nosotros p::before {
+      content: "🍽️ ";
+    }
+    .contacto p::before {
+      content: "📞 ";
+    }
+    .contacto a::before {
+      content: "📍 ";
+    }
+
+    /* Adaptabilidad móviles */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .carrusel a {
+        width: 45%;
+      }
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .carrusel a {
+        width: 90%;
+      }
+      #carrito-icono {
+        font-size: 18px;
+        padding: 10px 14px;
+      }
     }
   </style>
 </head>
@@ -85,23 +230,38 @@
     <a href="cenaduria.html">
       <img src="cenaduria1.jpeg" alt="Cenaduría LOEYI" />
       <div class="titulo">Cenaduría</div>
+      <span class="boton">🍲 Ver menú</span>
     </a>
     <a href="botanas.html">
       <img src="botanas1.jpeg" alt="Botanas LOEYI" />
       <div class="titulo">Botanas</div>
+      <span class="boton">🥨 Ver menú</span>
     </a>
     <a href="barbacoa.html">
       <img src="barbacoa1.jpeg" alt="Barbacoa LOEYI" />
       <div class="titulo">Barbacoa</div>
+      <span class="boton">🥩 Ver menú</span>
     </a>
   </div>
+
+  <!-- Sección Sobre Nosotros -->
+  <section class="sobre-nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>LOEYI es un lugar donde la tradición se encuentra con el sabor. Desde nuestra cenaduría hasta nuestras botanas y barbacoa, cada platillo está preparado con ingredientes frescos y con mucho amor. Nuestro objetivo es ofrecerte una experiencia única y deliciosa en cada visita.</p>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section class="contacto">
+    <h2>Contáctanos</h2>
+    <p>Teléfono: <a href="tel:4448561366">444 856 1366</a></p>
+    <p>Ubicación: <a href="https://maps.app.goo.gl/jNLgu3d9qwKYT99X8" target="_blank">Ver en mapa</a></p>
+  </section>
 
   <div id="carrito-icono" title="Ver carrito" style="display:none;">
     🛒 <span id="carrito-cantidad">0</span>
   </div>
 
   <script>
-    // Carrito global usando localStorage
     function actualizarCarritoIcono() {
       const carrito = JSON.parse(localStorage.getItem('carritoLOEYI')) || {};
       let totalCantidad = 0;
@@ -119,7 +279,6 @@
     }
     actualizarCarritoIcono();
 
-    // Evento click para mostrar alerta (o redirigir a carrito)
     document.getElementById('carrito-icono').addEventListener('click', () => {
       alert('Para ver tu carrito, entra a cualquier sección (Botanas, Cenaduría o Barbacoa).');
     });
