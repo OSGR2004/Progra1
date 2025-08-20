@@ -31,6 +31,7 @@
     <h3 style="text-align:center;">⏰ Horario: 6:00 PM - 11:00 PM</h3>
 
     <div class="grid">
+
       <!-- Pozole -->
       <div class="card">
         <img src="pozole.jpg" alt="pozole.jpg" class="imagen" />
@@ -38,10 +39,45 @@
           <h3>Pozole</h3>
           <p><span class="tag">Cenaduría</span> <span class="price">$95 / litro</span></p>
           <p>Con lechuga, rábanos y patita de puerco (opcional).</p>
+
+          <!-- Media orden / orden completa -->
+          <label>Tipo de orden:</label>
+          <select id="order-type-pozole">
+            <option value="Completa" selected>Orden completa</option>
+            <option value="Media">Media orden</option>
+          </select>
+
+          <!-- Ingredientes opcionales -->
+          <label>Ingredientes al gusto:</label>
+          <div class="ingredients">
+            <label><input type="checkbox" id="lechuga-pozole" checked /> Lechuga</label>
+            <label><input type="checkbox" id="rabanos-pozole" checked /> Rábanos</label>
+            <label><input type="checkbox" id="patita-pozole" /> Patita de puerco</label>
+          </div>
+
+          <!-- Comentarios especiales -->
+          <label>Comentarios:</label>
+          <input type="text" id="comments-pozole" placeholder="Ej. sin sal, más picante" />
+
           <label>Cantidad (litros):</label>
           <input type="number" id="qty-pozole" min="1" value="1" />
           <div class="actions">
-            <button class="btn" data-add data-name="Pozole" data-price="95" data-category="Cenaduría" data-qty-id="qty-pozole">Agregar</button>
+            <button class="btn"
+              data-add
+              data-name="Pozole"
+              data-price="95"
+              data-category="Cenaduría"
+              data-qty-id="qty-pozole"
+              data-extras='{
+                "orderTypeId": "order-type-pozole",
+                "ingredients": [
+                  {"id": "lechuga-pozole", "name": "Lechuga"},
+                  {"id": "rabanos-pozole", "name": "Rábanos"},
+                  {"id": "patita-pozole", "name": "Patita de puerco"}
+                ],
+                "commentsId": "comments-pozole"
+              }'
+            >Agregar</button>
           </div>
         </div>
       </div>
@@ -53,10 +89,44 @@
           <h3>Enchiladas</h3>
           <p><span class="tag">Cenaduría</span> <span class="price">$70</span></p>
           <p>5 piezas con aguacate, cebolla, frijoles y cueritos (opcional).</p>
+
+          <label>Tipo de orden:</label>
+          <select id="order-type-enchiladas">
+            <option value="Completa" selected>Orden completa</option>
+            <option value="Media">Media orden</option>
+          </select>
+
+          <label>Ingredientes al gusto:</label>
+          <div class="ingredients">
+            <label><input type="checkbox" id="cebolla-enchiladas" checked /> Cebolla</label>
+            <label><input type="checkbox" id="aguacate-enchiladas" checked /> Aguacate</label>
+            <label><input type="checkbox" id="frijoles-enchiladas" checked /> Frijoles</label>
+            <label><input type="checkbox" id="cueritos-enchiladas" /> Cueritos</label>
+          </div>
+
+          <label>Comentarios:</label>
+          <input type="text" id="comments-enchiladas" placeholder="Ej. sin picante, extra queso" />
+
           <label>Cantidad:</label>
           <input type="number" id="qty-enchiladas" min="1" value="1" />
           <div class="actions">
-            <button class="btn" data-add data-name="Enchiladas" data-price="70" data-category="Cenaduría" data-qty-id="qty-enchiladas">Agregar</button>
+            <button class="btn"
+              data-add
+              data-name="Enchiladas"
+              data-price="70"
+              data-category="Cenaduría"
+              data-qty-id="qty-enchiladas"
+              data-extras='{
+                "orderTypeId": "order-type-enchiladas",
+                "ingredients": [
+                  {"id": "cebolla-enchiladas", "name": "Cebolla"},
+                  {"id": "aguacate-enchiladas", "name": "Aguacate"},
+                  {"id": "frijoles-enchiladas", "name": "Frijoles"},
+                  {"id": "cueritos-enchiladas", "name": "Cueritos"}
+                ],
+                "commentsId": "comments-enchiladas"
+              }'
+            >Agregar</button>
           </div>
         </div>
       </div>
@@ -68,43 +138,156 @@
           <h3>Tostadas</h3>
           <p><span class="tag">Cenaduría</span> <span class="price">$60</span></p>
           <p>4 piezas con lechuga, frijoles, jitomate, cebolla, aguacate, crema y queso.</p>
+
+          <label>Tipo de orden:</label>
+          <select id="order-type-tostadas">
+            <option value="Completa" selected>Orden completa</option>
+            <option value="Media">Media orden</option>
+          </select>
+
+          <label>Ingredientes al gusto:</label>
+          <div class="ingredients">
+            <label><input type="checkbox" id="lechuga-tostadas" checked /> Lechuga</label>
+            <label><input type="checkbox" id="frijoles-tostadas" checked /> Frijoles</label>
+            <label><input type="checkbox" id="jitomate-tostadas" checked /> Jitomate</label>
+            <label><input type="checkbox" id="cebolla-tostadas" checked /> Cebolla</label>
+            <label><input type="checkbox" id="aguacate-tostadas" checked /> Aguacate</label>
+            <label><input type="checkbox" id="crema-tostadas" checked /> Crema</label>
+            <label><input type="checkbox" id="queso-tostadas" checked /> Queso</label>
+          </div>
+
+          <label>Comentarios:</label>
+          <input type="text" id="comments-tostadas" placeholder="Ej. sin crema, extra queso" />
+
           <label>Cantidad:</label>
           <input type="number" id="qty-tostadas" min="1" value="1" />
           <div class="actions">
-            <button class="btn" data-add data-name="Tostadas" data-price="60" data-category="Cenaduría" data-qty-id="qty-tostadas">Agregar</button>
+            <button class="btn"
+              data-add
+              data-name="Tostadas"
+              data-price="60"
+              data-category="Cenaduría"
+              data-qty-id="qty-tostadas"
+              data-extras='{
+                "orderTypeId": "order-type-tostadas",
+                "ingredients": [
+                  {"id": "lechuga-tostadas", "name": "Lechuga"},
+                  {"id": "frijoles-tostadas", "name": "Frijoles"},
+                  {"id": "jitomate-tostadas", "name": "Jitomate"},
+                  {"id": "cebolla-tostadas", "name": "Cebolla"},
+                  {"id": "aguacate-tostadas", "name": "Aguacate"},
+                  {"id": "crema-tostadas", "name": "Crema"},
+                  {"id": "queso-tostadas", "name": "Queso"}
+                ],
+                "commentsId": "comments-tostadas"
+              }'
+            >Agregar</button>
           </div>
         </div>
       </div>
 
       <!-- Flautas -->
       <div class="card">
-           <img src="flautas.jpg" alt="flautas.jpg" class="imagen" />
+        <img src="flautas.jpg" alt="flautas.jpg" class="imagen" />
         <div class="body">
           <h3>Flautas</h3>
           <p><span class="tag">Cenaduría</span> <span class="price">$70</span></p>
           <p>5 flautas con lechuga, jitomate, cebolla, crema y queso (al gusto).</p>
+
+          <label>Tipo de orden:</label>
+          <select id="order-type-flautas">
+            <option value="Completa" selected>Orden completa</option>
+            <option value="Media">Media orden</option>
+          </select>
+
+          <label>Ingredientes al gusto:</label>
+          <div class="ingredients">
+            <label><input type="checkbox" id="lechuga-flautas" checked /> Lechuga</label>
+            <label><input type="checkbox" id="jitomate-flautas" checked /> Jitomate</label>
+            <label><input type="checkbox" id="cebolla-flautas" checked /> Cebolla</label>
+            <label><input type="checkbox" id="crema-flautas" checked /> Crema</label>
+            <label><input type="checkbox" id="queso-flautas" checked /> Queso</label>
+          </div>
+
+          <label>Comentarios:</label>
+          <input type="text" id="comments-flautas" placeholder="Ej. sin cebolla, extra queso" />
+
           <label>Cantidad:</label>
           <input type="number" id="qty-flautas" min="1" value="1" />
           <div class="actions">
-            <button class="btn" data-add data-name="Flautas" data-price="70" data-category="Cenaduría" data-qty-id="qty-flautas">Agregar</button>
+            <button class="btn"
+              data-add
+              data-name="Flautas"
+              data-price="70"
+              data-category="Cenaduría"
+              data-qty-id="qty-flautas"
+              data-extras='{
+                "orderTypeId": "order-type-flautas",
+                "ingredients": [
+                  {"id": "lechuga-flautas", "name": "Lechuga"},
+                  {"id": "jitomate-flautas", "name": "Jitomate"},
+                  {"id": "cebolla-flautas", "name": "Cebolla"},
+                  {"id": "crema-flautas", "name": "Crema"},
+                  {"id": "queso-flautas", "name": "Queso"}
+                ],
+                "commentsId": "comments-flautas"
+              }'
+            >Agregar</button>
           </div>
         </div>
       </div>
 
       <!-- Tacos Rojos -->
       <div class="card">
-      <img src="tacos-rojos.jpg" alt="tacos-rojos.jpg" class="imagen" />
+        <img src="tacos-rojos.jpg" alt="tacos-rojos.jpg" class="imagen" />
         <div class="body">
           <h3>Tacos Rojos</h3>
           <p><span class="tag">Cenaduría</span> <span class="price">$70</span></p>
           <p>5 tacos con verduras al gusto, crema, lechuga, queso y cebolla opcional.</p>
+
+          <label>Tipo de orden:</label>
+          <select id="order-type-tacos-rojos">
+            <option value="Completa" selected>Orden completa</option>
+            <option value="Media">Media orden</option>
+          </select>
+
+          <label>Ingredientes al gusto:</label>
+          <div class="ingredients">
+            <label><input type="checkbox" id="verduras-tacos-rojos" checked /> Verduras</label>
+            <label><input type="checkbox" id="crema-tacos-rojos" checked /> Crema</label>
+            <label><input type="checkbox" id="lechuga-tacos-rojos" checked /> Lechuga</label>
+            <label><input type="checkbox" id="queso-tacos-rojos" checked /> Queso</label>
+            <label><input type="checkbox" id="cebolla-tacos-rojos" /> Cebolla</label>
+          </div>
+
+          <label>Comentarios:</label>
+          <input type="text" id="comments-tacos-rojos" placeholder="Ej. sin cebolla, extra crema" />
+
           <label>Cantidad:</label>
           <input type="number" id="qty-tacos-rojos" min="1" value="1" />
           <div class="actions">
-            <button class="btn" data-add data-name="Tacos Rojos" data-price="70" data-category="Cenaduría" data-qty-id="qty-tacos-rojos">Agregar</button>
+            <button class="btn"
+              data-add
+              data-name="Tacos Rojos"
+              data-price="70"
+              data-category="Cenaduría"
+              data-qty-id="qty-tacos-rojos"
+              data-extras='{
+                "orderTypeId": "order-type-tacos-rojos",
+                "ingredients": [
+                  {"id": "verduras-tacos-rojos", "name": "Verduras"},
+                  {"id": "crema-tacos-rojos", "name": "Crema"},
+                  {"id": "lechuga-tacos-rojos", "name": "Lechuga"},
+                  {"id": "queso-tacos-rojos", "name": "Queso"},
+                  {"id": "cebolla-tacos-rojos", "name": "Cebolla"}
+                ],
+                "commentsId": "comments-tacos-rojos"
+              }'
+            >Agregar</button>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 

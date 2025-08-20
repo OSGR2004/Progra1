@@ -372,3 +372,56 @@ a:hover {
 .btn.gray { background: #ccc; }
 .btn.blue { background: #007bff; color: white; }
 .required { color: red; }
+/* Toast flotante */
+.toast-msg {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #222;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .3s ease;
+  z-index: 9999;
+}
+.toast-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación carrito */
+[data-cart-badge].bump {
+  animation: bump 0.4s ease;
+}
+@keyframes bump {
+  0% { transform: scale(1); }
+  10% { transform: scale(1.2); }
+  30% { transform: scale(0.9); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+/* ===== Botones seleccionables ===== */
+.option-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 5px;
+  border: 2px solid #c62828;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+.option-btn:hover {
+  background: #fbe9e7;
+}
+
+input[type="checkbox"]:checked + .option-btn,
+input[type="radio"]:checked + .option-btn {
+  background: #c62828;
+  color: #fff;
+  border-color: #8e0000;
+}
