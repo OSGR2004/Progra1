@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cenaduría - LOEYI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">🍲 Cenaduría</div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="botanas.html">Botanas</a>
+        <a href="barbacoa.html">Barbacoa</a>
+        <a href="Contacto.html">Contacto</a>
+      </div>
+      <span class="badge badge-dot"><span class="dot"></span><span data-cart-badge>0</span> en carrito</span>
+      <button class="btn alt" data-open-cart>Ver carrito</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Cenaduría LOEYI</h1>
+    <p class="subtitle">🥣 Tradición, sabor y calidad en cada platillo 🥣</p>
+
+    <h3 style="text-align:center;">⏰ Horario: 6:00 PM - 11:00 PM</h3>
+
+    <div class="grid">
+      <!-- Pozole -->
+      <div class="card">
+        <img src="pozole.jpg" alt="pozole.jpg" class="imagen" />
+        <div class="body">
+          <h3>Pozole</h3>
+          <p><span class="tag">Cenaduría</span> <span class="price">$95 / litro</span></p>
+          <p>Con lechuga, rábanos y patita de puerco (opcional).</p>
+          <label>Cantidad (litros):</label>
+          <input type="number" id="qty-pozole" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Pozole" data-price="95" data-category="Cenaduría" data-qty-id="qty-pozole">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enchiladas -->
+      <div class="card">
+        <div class="img"><img src="enchiladas.jpg" alt="Enchiladas" /></div>
+        <div class="body">
+          <h3>Enchiladas</h3>
+          <p><span class="tag">Cenaduría</span> <span class="price">$70</span></p>
+          <p>5 piezas con aguacate, cebolla, frijoles y cueritos (opcional).</p>
+          <label>Cantidad:</label>
+          <input type="number" id="qty-enchiladas" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Enchiladas" data-price="70" data-category="Cenaduría" data-qty-id="qty-enchiladas">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tostadas -->
+      <div class="card">
+        <div class="img"><img src="tostadas.jpg" alt="Tostadas" /></div>
+        <div class="body">
+          <h3>Tostadas</h3>
+          <p><span class="tag">Cenaduría</span> <span class="price">$60</span></p>
+          <p>4 piezas con lechuga, frijoles, jitomate, cebolla, aguacate, crema y queso.</p>
+          <label>Cantidad:</label>
+          <input type="number" id="qty-tostadas" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Tostadas" data-price="60" data-category="Cenaduría" data-qty-id="qty-tostadas">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flautas -->
+      <div class="card">
+           <img src="flautas.jpg" alt="flautas.jpg" class="imagen" />
+        <div class="body">
+          <h3>Flautas</h3>
+          <p><span class="tag">Cenaduría</span> <span class="price">$70</span></p>
+          <p>5 flautas con lechuga, jitomate, cebolla, crema y queso (al gusto).</p>
+          <label>Cantidad:</label>
+          <input type="number" id="qty-flautas" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Flautas" data-price="70" data-category="Cenaduría" data-qty-id="qty-flautas">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tacos Rojos -->
+      <div class="card">
+      <img src="tacos-rojos.jpg" alt="tacos-rojos.jpg" class="imagen" />
+        <div class="body">
+          <h3>Tacos Rojos</h3>
+          <p><span class="tag">Cenaduría</span> <span class="price">$70</span></p>
+          <p>5 tacos con verduras al gusto, crema, lechuga, queso y cebolla opcional.</p>
+          <label>Cantidad:</label>
+          <input type="number" id="qty-tacos-rojos" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Tacos Rojos" data-price="70" data-category="Cenaduría" data-qty-id="qty-tacos-rojos">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carrito lateral -->
+  <div class="cart-drawer">
+    <div class="cart-head">
+      <strong>🛒 Tu carrito</strong>
+      <div style="margin-left:auto"></div>
+      <button class="btn gray" data-close-cart>Cerrar</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-foot">
+      <div class="total">
+        <span>Total</span>
+        <strong data-cart-total>$0.00</strong>
+      </div>
+      <div class="actions">
+        <button class="btn alt" data-export-pdf>Generar PDF</button>
+        <button class="btn gray" data-clear-cart>Vaciar</button>
+      </div>
+      <p class="small">El PDF se genera en tu navegador.</p>
+    </div>
+  </div>
+
+  <button class="btn cart-toggle" data-open-cart>🛒 <span data-cart-badge>0</span></button>
+
+  <script src="app.js"></script>
+</body>
+</html>

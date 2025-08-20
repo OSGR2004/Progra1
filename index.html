@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LOEYI - Inicio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0; padding: 0;
+      background: #fff7f0;
+    }
+    h1 {
+      margin-top: 30px;
+      color: #ff5722;
+    }
+    .carrusel {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px auto;
+      max-width: 900px;
+    }
+    .carrusel a {
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 280px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: #333;
+    }
+    .carrusel a:hover {
+      transform: scale(1.05);
+    }
+    .carrusel img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .carrusel .titulo {
+      padding: 12px 0;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background: #fff3e0;
+    }
+
+    /* Carrito icono global arriba a la derecha */
+    #carrito-icono {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: #ff5722;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      box-shadow: 0 0 10px rgba(255,87,34,0.7);
+      z-index: 1000;
+    }
+    #carrito-cantidad {
+      background: white;
+      color: #ff5722;
+      border-radius: 50%;
+      padding: 2px 8px;
+      margin-left: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LOEYI - Bienvenidos</h1>
+  </header>
+
+  <div class="carrusel">
+    <a href="cenaduria.html">
+      <img src="cenaduria1.jpeg" alt="Cenaduría LOEYI" />
+      <div class="titulo">Cenaduría</div>
+    </a>
+    <a href="botanas.html">
+      <img src="botanas1.jpeg" alt="Botanas LOEYI" />
+      <div class="titulo">Botanas</div>
+    </a>
+    <a href="barbacoa.html">
+      <img src="barbacoa1.jpeg" alt="Barbacoa LOEYI" />
+      <div class="titulo">Barbacoa</div>
+    </a>
+  </div>
+
+  <div id="carrito-icono" title="Ver carrito" style="display:none;">
+    🛒 <span id="carrito-cantidad">0</span>
+  </div>
+
+  <script>
+    // Carrito global usando localStorage
+    function actualizarCarritoIcono() {
+      const carrito = JSON.parse(localStorage.getItem('carritoLOEYI')) || {};
+      let totalCantidad = 0;
+      for (const item in carrito) {
+        totalCantidad += carrito[item].cantidad;
+      }
+      const icono = document.getElementById('carrito-icono');
+      const cantidadSpan = document.getElementById('carrito-cantidad');
+      if(totalCantidad > 0) {
+        icono.style.display = 'inline-block';
+        cantidadSpan.textContent = totalCantidad;
+      } else {
+        icono.style.display = 'none';
+      }
+    }
+    actualizarCarritoIcono();
+
+    // Evento click para mostrar alerta (o redirigir a carrito)
+    document.getElementById('carrito-icono').addEventListener('click', () => {
+      alert('Para ver tu carrito, entra a cualquier sección (Botanas, Cenaduría o Barbacoa).');
+    });
+  </script>
+</body>
+</html>

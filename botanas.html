@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Botanas - LOEYI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">🍟 Botanas</div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="cenaduria.html">Cenaduría</a>
+        <a href="barbacoa.html">Barbacoa</a>
+        <a href="Contacto.html">Contacto</a>
+      </div>
+      <span class="badge badge-dot"><span class="dot"></span><span data-cart-badge>0</span> en carrito</span>
+      <button class="btn alt" data-open-cart>Ver carrito</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Botanas LOEYI</h1>
+    <p class="subtitle">🎉 El antojo perfecto para cada momento 🎉</p>
+
+    <div class="grid">
+      <!-- Producto 1 -->
+      <div class="card">
+        <div class="img"><img src="churros.jpg" alt="Churros de RIN" /></div>
+        <div class="body">
+          <h3>Churros de RIN</h3>
+          <p><span class="tag">Botana</span> <span class="price">$13 con salsas / $11 solos</span></p>
+          <label>Cantidad (con salsas):</label>
+          <input type="number" id="qty-churros" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Churros de RIN (con salsas)" data-price="13" data-category="Botana" data-qty-id="qty-churros">Agregar</button>
+          </div>
+          <label>Cantidad (solos):</label>
+          <input type="number" id="qty-churros-solos" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Churros de RIN (solos)" data-price="11" data-category="Botana" data-qty-id="qty-churros-solos">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="card">
+        <div class="img"><img src="chetos.jpg" alt="Chetos" /></div>
+        <div class="body">
+          <h3>Chetos</h3>
+          <p><span class="tag">Botana</span> <span class="price">$13 con salsas / $11 solos</span></p>
+          <label>Cantidad (con salsas):</label>
+          <input type="number" id="qty-chetos" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Chetos (con salsas)" data-price="13" data-category="Botana" data-qty-id="qty-chetos">Agregar</button>
+          </div>
+          <label>Cantidad (solos):</label>
+          <input type="number" id="qty-chetos-solos" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Chetos (solos)" data-price="11" data-category="Botana" data-qty-id="qty-chetos-solos">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="card">
+        <img src="duros.jpg" alt="duros.jpg" class="imagen" />
+        <div class="body">
+          <h3>Duros</h3>
+          <p><span class="tag">Botana</span> <span class="price">$30 preparados / $20 con salsas</span></p>
+          <label>Cantidad (preparados):</label>
+          <input type="number" id="qty-duros-prep" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Duros preparados" data-price="30" data-category="Botana" data-qty-id="qty-duros-prep">Agregar</button>
+          </div>
+          <label>Cantidad (con salsas):</label>
+          <input type="number" id="qty-duros-salsas" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Duros con dos salsas" data-price="20" data-category="Botana" data-qty-id="qty-duros-salsas">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="card">
+        <div class="img"><img src="raspas.jpg" alt="Raspas tradicionales" /></div>
+        <div class="body">
+          <h3>Raspas tradicionales</h3>
+          <p><span class="tag">Botana</span> <span class="price">$20 bolsa / $25 vaso</span></p>
+          <label>Cantidad (bolsa):</label>
+          <input type="number" id="qty-raspas-bolsa" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Raspas tradicionales (bolsa)" data-price="20" data-category="Botana" data-qty-id="qty-raspas-bolsa">Agregar</button>
+          </div>
+          <label>Cantidad (vaso):</label>
+          <input type="number" id="qty-raspas-vaso" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Raspas tradicionales (vaso)" data-price="25" data-category="Botana" data-qty-id="qty-raspas-vaso">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="card">
+        <div class="img"><img src="rompope.jpg" alt="Raspas de Rompope" /></div>
+        <div class="body">
+          <h3>Raspas de Rompope</h3>
+          <p><span class="tag">Botana</span> <span class="price">$22 bolsa / $27 vaso</span></p>
+          <label>Cantidad (bolsa):</label>
+          <input type="number" id="qty-rompope-bolsa" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Raspas de Rompope (bolsa)" data-price="22" data-category="Botana" data-qty-id="qty-rompope-bolsa">Agregar</button>
+          </div>
+          <label>Cantidad (vaso):</label>
+          <input type="number" id="qty-rompope-vaso" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Raspas de Rompope (vaso)" data-price="27" data-category="Botana" data-qty-id="qty-rompope-vaso">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="card">
+        <div class="img"><img src="chamoyadas.jpg" alt="Chamoyadas" /></div>
+        <div class="body">
+          <h3>Chamoyadas</h3>
+          <p><span class="tag">Botana</span> <span class="price">$27</span></p>
+          <label>Cantidad:</label>
+          <input type="number" id="qty-chamoyadas" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Chamoyadas" data-price="27" data-category="Botana" data-qty-id="qty-chamoyadas">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 7 -->
+      <div class="card">
+        <div class="img"><img src="tostadas-botana.jpg" alt="Tostadas" /></div>
+        <div class="body">
+          <h3>Tostadas</h3>
+          <p><span class="tag">Botana</span> <span class="price">$20 con salsas / $28 preparadas</span></p>
+          <label>Cantidad (con salsas):</label>
+          <input type="number" id="qty-tostadas-salsas" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Tostadas con salsas" data-price="20" data-category="Botana" data-qty-id="qty-tostadas-salsas">Agregar</button>
+          </div>
+          <label>Cantidad (preparadas):</label>
+          <input type="number" id="qty-tostadas-prep" min="1" value="1" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Tostadas preparadas" data-price="28" data-category="Botana" data-qty-id="qty-tostadas-prep">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carrito -->
+  <div class="cart-drawer">
+    <div class="cart-head">
+      <strong>🛒 Tu carrito</strong>
+      <div style="margin-left:auto"></div>
+      <button class="btn gray" data-close-cart>Cerrar</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-foot">
+      <div class="total">
+        <span>Total</span>
+        <strong data-cart-total>$0.00</strong>
+      </div>
+      <div class="actions">
+        <button class="btn alt" data-export-pdf>Generar PDF</button>
+        <button class="btn gray" data-clear-cart>Vaciar</button>
+      </div>
+      <p class="small">El PDF se genera en tu navegador.</p>
+    </div>
+  </div>
+  
+
+  <button class="btn cart-toggle" data-open-cart>🛒 <span data-cart-badge>0</span></button>
+
+  <script src="app.js"></script>
+</body>
+</html>

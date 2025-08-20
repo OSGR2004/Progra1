@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Barbacoa - Mi Menú</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">🍽️ Barbacoa</div>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="cenaduria.html">Cenaduría</a>
+        <a href="barbacoa.html">Barbacoa</a>
+        <a href="Contacto.html">Contacto</a>
+      </div>
+      <span class="badge badge-dot"><span class="dot"></span><span data-cart-badge>0</span> en carrito</span>
+      <button class="btn alt" data-open-cart>Ver carrito</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Barbacoa LOEYI</h1>
+    <p class="subtitle">🔥 Disfruta nuestra deliciosa barbacoa tradicional 🔥</p>
+
+    <div class="grid">
+      <!-- Producto 1 -->
+      <div class="card">
+        <div class="img"><img src="barbacoa1.jpg" alt="Barbacoa por kilo" /></div>
+        <div class="body">
+          <h3>Barbacoa por kilo</h3>
+          <p><span class="tag">Barbacoa</span> <span class="price">$420 / kg</span></p>
+          <p>Barbacoa de res estilo tradicional. Perfecta para compartir en familia.</p>
+          <label>Cantidad (kg):</label>
+          <input type="number" id="qty-barbacoa-kilo" min="1" value="1" style="width:60px;" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Barbacoa por kilo" data-price="420" data-category="Barbacoa" data-qty-id="qty-barbacoa-kilo">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="card">
+        <div class="img"><img src="taco-barbacoa.jpg" alt="Taco de barbacoa" /></div>
+        <div class="body">
+          <h3>Taco de barbacoa</h3>
+          <p><span class="tag">Barbacoa</span> <span class="price">$15 c/u</span></p>
+          <p>Con su cebollita, salsa y sabor casero.</p>
+          <label>Cantidad:</label>
+          <input type="number" id="qty-taco-barbacoa" min="1" value="1" style="width:60px;" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Taco de barbacoa" data-price="15" data-category="Barbacoa" data-qty-id="qty-taco-barbacoa">Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="card">
+        <div class="img"><img src="torta-barbacoa.jpg" alt="Torta de barbacoa" /></div>
+        <div class="body">
+          <h3>Torta de barbacoa</h3>
+          <p><span class="tag">Barbacoa</span> <span class="price">$40.00</span></p>
+          <p>Pan suave, carne jugosa y todo el sazón LOEYI.</p>
+          <label>Cantidad:</label>
+          <input type="number" id="qty-torta-barbacoa" min="1" value="1" style="width:60px;" />
+          <div class="actions">
+            <button class="btn" data-add data-name="Torta de barbacoa" data-price="40" data-category="Barbacoa" data-qty-id="qty-torta-barbacoa">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carrito -->
+  <div class="cart-drawer">
+    <div class="cart-head"><strong>🛒 Tu carrito</strong><div style="margin-left:auto"></div><button class="btn gray" data-close-cart>Cerrar</button></div>
+    <div class="cart-items"></div>
+    <div class="cart-foot">
+      <div class="total"><span>Total</span><strong data-cart-total>$0.00</strong></div>
+      <div class="actions">
+        <button class="btn alt" data-export-pdf>Generar PDF</button>
+        <button class="btn gray" data-clear-cart>Vaciar</button>
+      </div>
+      <p class="small">El PDF se genera en tu navegador.</p>
+    </div>
+  </div>
+  <button class="btn cart-toggle" data-open-cart>🛒 <span data-cart-badge>0</span></button>
+
+  <script src="app.js"></script>
+</body>
+</html>
